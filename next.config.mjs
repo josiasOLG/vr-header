@@ -2,7 +2,6 @@ import { NextFederationPlugin } from "@module-federation/nextjs-mf";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configurações para Module Federation
   reactStrictMode: false,
   images: {
     unoptimized: true
@@ -45,7 +44,7 @@ const nextConfig = {
           },
           extraOptions: {
             exposePages: true,
-            debug: true, // Enable debug mode
+            debug: true, 
           },
         })
       );
