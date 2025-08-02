@@ -2,9 +2,7 @@ import { NextFederationPlugin } from "@module-federation/nextjs-mf";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Desabilita SSR para microfrontends
-  output: 'export',
-  trailingSlash: true,
+  // Configurações para Module Federation
   reactStrictMode: false,
   images: {
     unoptimized: true
@@ -19,6 +17,9 @@ const nextConfig = {
           filename: "static/chunks/remoteEntry.js",
           exposes: {
             "./App": "./components/App.tsx",
+          },
+          remotes: {
+            host: `host@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
           },
           shared: {
             react: { 
